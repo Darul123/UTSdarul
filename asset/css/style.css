@@ -10,22 +10,35 @@
 } 
 body {
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    background: #6eaab9;
 }
 a {
+    font-size: 14px;
     text-decoration: none;
+    color: #000;
 }
 h1 {
-    font-size: 35px;
+    font-family: 'Abril Fatface', cursive;
 }
 h2 {
     font-size: 25px;
 }
 p {
-    font-size: 15px;
+    font-size: 14px;
+}
+::placeholder {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: rgba(226, 226, 226, 0.8);
+}
+header, section, footer {
+    margin: 0 5px 0 5px;
+    background: #fff;
 }
 header {
     border-bottom: 1px rgba(222,222,223,0.7) solid;
-    margin: 0 5px 0 5px;
 }
 .container {
     margin: 0 auto;
@@ -33,12 +46,16 @@ header {
 .notification {
     text-align: center;
     padding: 10px 13px;
+    background: #6eaab9;
+    color: #fff;
 }
 .top-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 7px 0;
+    padding: 20px 0 10px 0;
+    font-size: 14px;
+    font-weight: 300;
 }
 .top-left ul{
     display: flex;
@@ -61,7 +78,7 @@ header {
     align-items: center;
 }
 .top-right ul li {
-    border-right: 1px solid gray;
+    border-right: 1px solid rgba(150, 150, 150, 0.5);
 }
 .top-right ul li a {
     padding: 0 5px 0 7px;
@@ -73,6 +90,7 @@ header {
     display: flex;
     align-items: center;
     padding: 0 0 0 10px; 
+    font-weight: 700;
 }
 .phone-number i {
     padding: 0 10px 0 0;
@@ -85,7 +103,7 @@ header {
 }
 .search input {
     border: none;
-    border-bottom: 1px grey solid;
+    border-bottom: 1px rgba(226, 226, 226, 0.8) solid;
     padding: 15px 5px;
 }
 .search img {
@@ -102,15 +120,31 @@ header {
     margin: 0 10px 0 0;
 }
 .main-nav {
-    padding: 25px 20px;
+    padding: 15px 30px;
 }
 .main-nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.main-nav ul li a {
+    font-size: 14px;
+    font-weight: 400;
+}
 .main-content {
     padding: 25px 0;
+}
+.main-nav ul li a::after {
+    margin: 10px 0 0 0;
+    display:block;
+    content: "";
+    border-bottom: solid 2px #cc0e74;  
+    transform: scaleX(0);  
+    transition: .3s ease-in-out;
+    transform-origin:  0% 50%;
+}
+.main-nav ul li a:hover::after {
+    transform: scaleX(1);
 }
 .img-top {
     max-width: 100%;
@@ -143,6 +177,9 @@ header {
     transform: translate(-50%, -50%);
     padding: 30px 50px;
     background: rgba(226, 226, 226, 0.8);
+    font-family: 'Abril Fatface', cursive;
+    font-size: 20px;
+    color: rgb(54, 54, 54);
 }
 .box:nth-child(1) {
     background: url(../images/furniture.jpg);
@@ -169,17 +206,27 @@ header {
 .testimonial img{
     width: 145px;
 }
+.testimonial p:nth-child(3) {
+    font-size: 13px;
+}
 .text-test {
+    padding: 10px 0 0 0;
     width: 60%;
     text-align: center;
 }
 .text-test p{
-    font-size: 17px;
+    font-size: 15px;
+}
+.kutip-awal {
+    margin: -20px 0 0 0;
+}
+.kutip-akhir {
+    margin: 20px 0 0 0;
 }
 .bdr-bt {
     width: 120px;
     height: 2px;
-    background: cyan;
+    background: #6eaab9;
     margin: 20px auto;
     content: "";
     display: block;
@@ -188,12 +235,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px 0 0 0;
+    padding: 20px 0 0 0;
 }
 .line-int {
-    width: 40%;
+    width: 38%;
     height: 1px;
-    background: cyan;
+    background: rgba(226, 226, 226, 0.8);
     content: "";
     display: block;
 }
@@ -226,6 +273,7 @@ header {
 }
 .box-title h2 {
     padding: 20px 0 10px 0;
+    font-weight: 300;
 }
 .article-img {
     width: 100%;
@@ -241,7 +289,7 @@ header {
 .box-title button {
     margin: 10px 0;
     padding: 10px 20px;
-    border: 1px grey solid;
+    border: 1px rgba(190, 190, 190, 0.5) solid;
     background: transparent;
 }
 .box-isi {
@@ -262,6 +310,9 @@ header {
     width: 100%;
     line-height: 20px;
 }
+.catalogue .container .int-title .line-int {
+    width: 40%;
+}
 .cost {
     padding: 0 0 10px 0;
     font-size: 20px;
@@ -274,15 +325,16 @@ header {
     align-items: center;
 }
 .but-view {
+    padding: 10px 0 0 0;
     width: 100%;
     height: auto;
     text-align: center;
 }
 .insta .container .int-title .line-int {
-    width: 38%;
+    width: 37%;
 }
 .gallery-content {
-    margin: 30px 0;
+    padding: 30px 0;
 }
 .gallery {
     display: flex;
@@ -294,32 +346,42 @@ header {
     width: 255px;
     height: 255px;
     background: grey;
+    background: url(../images/furniture.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+footer {
+    background: #f9f6f7;
 }
 .foot-left {
-    width: 65%;
-    margin: 20px 0 0 0;
+    width: 50%;
+    padding: 20px 0 0 0;
 }
 .help {
     display: flex;
 }
 .foot-logo {
-    margin: 0 30px 0 0;
+    margin: 0 50px 0 0;
 }
 .foot-logo img{
-    width: 80px;
+    width: 60px;
 }
 .foot-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 20px 10px 0;
 }
 .sosmed i {
     font-size: 20px;
-    margin: 10px 5px;
+    margin: 10px 15px 0 0;
+}
+.but-up a{
+    font-size: 13px;
 }
 .get {
-    margin: 0 30px 0 0;
+    margin: 0 50px 0 0;
 }
 .get p, .advice p {
     margin: 0 0 10px 0;
@@ -327,4 +389,70 @@ header {
 }
 .get ul li, .advice ul li {
     padding: 0 0 5px 0;
+}
+.info p:nth-child(1) {
+    padding: 50px 0 40px 0;
+}
+.info p:nth-child(2) {
+    line-height: 25px;
+    margin: 0 0 20px 0;
+}
+.info p:nth-child(3) {
+    margin: 30px 0;
+    font-weight: 700;
+    font-size: 16px;
+}
+.info p:nth-child(4), .info p:nth-child(5), .info p:nth-child(6) {
+    margin: 10px 0;
+}
+.info {
+    padding: 0 0 20px 0;
+}
+.subscribe {
+    width: 100%;
+    padding: 15px;
+    margin: 0 0 0 95px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(194, 194, 194, 0.3);
+}
+.subscribe-title h1 {
+    width: 60%;
+}
+.subscribe-title img {
+    width: 30%;
+}
+.subscribe-title {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 30px 0;
+}
+.subscribe p {
+    width: 65%;
+    line-height: 20px;
+}
+.subscribe h1 {
+    font-size: 40px;
+}
+.subscribe input {
+    width: calc(100% - 20px);
+    border: none;
+    padding: 10px 10px;
+    border-bottom: 1px rgba(150, 150, 150, 0.7) solid;
+    margin: 10px 0 20px 0;
+}
+.subscribe button {
+    border: 1px rgba(150, 150, 150, 0.7) solid;
+    background: transparent;
+    padding: 10px 20px;
+}
+.foot-bottom {
+    display: flex;
+}
+.foot-right {
+    width: 40%;
+}
+button:hover {
+    background: #b8de6f;
+    color: #fff;
+    border: 1px solid transparent;
 }
