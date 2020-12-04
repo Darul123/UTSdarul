@@ -1,21 +1,27 @@
 @media only screen and (min-width: 1200px) {
     .container {
-        width: 1300px;
+        width: 100%;
+        max-width: 1280px;
+        padding: 0 30px;
     }
 } 
 @media only screen and (max-width: 1199px) {
     .container {
         width: 90%;
     }
+}
+* {
+    box-sizing: border-box;
 } 
 body {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     color: #000;
     background: #6eaab9;
+    position: relative;
 }
 a {
-    font-size: 14px;
+    font-size: 12px;
     text-decoration: none;
     color: #000;
 }
@@ -43,17 +49,31 @@ header {
 .container {
     margin: 0 auto;
 }
+.chat {
+    position: fixed;
+    top: 85%;
+    right: 2.5%;
+    background: rgb(186, 85, 119);
+    border-radius: 50%;
+    z-index: 999;
+}
+.chat i {
+    font-size: 30px;
+    padding: 20px;
+    color: #fff;
+}
 .notification {
     text-align: center;
     padding: 10px 13px;
     background: #6eaab9;
     color: #fff;
+    cursor: pointer;
 }
 .top-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0 10px 0;
+    padding: 7px 0;
     font-size: 14px;
     font-weight: 300;
 }
@@ -86,6 +106,9 @@ header {
 .top-right ul li:nth-child(4) {
     border: none;
 }
+.phone-number i, p {
+    font-size: 12px;
+}
 .phone-number {
     display: flex;
     align-items: center;
@@ -94,6 +117,34 @@ header {
 }
 .phone-number i {
     padding: 0 10px 0 0;
+    color: #6eaab9;
+}
+.ph-hover {
+    text-align: right;
+    cursor: pointer;
+}
+.ph-hover:hover .phone-hover {
+    display: block;
+}
+.phone-hover {
+    position: absolute;
+    right: 0;
+    margin: 10px 60px 0 0;
+    width: 300px;
+    display: none;
+    padding: 5px 10px;
+    text-align: right;
+    background: url(../images/bg-content.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.ph-isi {
+    padding: 5px 10px ;
+}
+.ph-isi h3 {
+    font-weight: 600;
+    padding: 5px 0;
 }
 .main-header {
     display: flex;
@@ -146,29 +197,45 @@ header {
 .main-nav ul li a:hover::after {
     transform: scaleX(1);
 }
+.dropdown {
+    display: none;
+}
 .img-top {
     max-width: 100%;
-    cursor: pointer;
 }
 .img-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 100%;
+    overflow: hidden;
+    
 }
-.img-bottom img {
-    width: 49%;
-    margin: 20px 5px;
+.img-bt-hover {
+    width: 50%;
+    overflow: hidden;
+    margin: 15px 0 ;
+}
+.img-bt-hover:nth-child(1) {
+    margin-right: 15px;
+}
+.img-bottom img{
+    transition: transform 3s ease;
+    width: 100%;
+}
+.btm-img:hover {
+    transform: scale(1.2);
 }
 .title-group {
     display: flex;
     justify-content: space-between;
 }
 .box {
-    width: 31%;
+    width: 33%;
     height: 250px;
     position: relative;
-    padding: 0 5px;
+    padding: 0 7px;
+    overflow: hidden;
 }
 .box p {
     position: absolute;
@@ -181,20 +248,13 @@ header {
     font-size: 20px;
     color: rgb(54, 54, 54);
 }
-.box:nth-child(1) {
-    background: url(../images/furniture.jpg);
-    background-size: cover;
-    background-position: center;
+.box img {
+    width: 100%;
+    transition: transform 3s ease;
 }
-.box:nth-child(2) {
-    background: url(../images/accesories.jpg);
-    background-size: cover;
-    background-position: center;
-}
-.box:nth-child(3) {
-    background: url(../images/lighting.jpg);
-    background-size: cover;
-    background-position: center;
+.box:hover img {
+    transform: scale(1.2);
+    filter: blur(1px);
 }
 .testimonial {
     display: flex;
@@ -216,6 +276,7 @@ header {
 }
 .text-test p{
     font-size: 15px;
+    line-height: 23px;
 }
 .kutip-awal {
     margin: -20px 0 0 0;
@@ -278,9 +339,17 @@ header {
 .article-img {
     width: 100%;
     height: 200px;
-    background: url(../images/lighting.jpg);
-    background-position: center;
-    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+.article-img a img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 100%;
+    transition: 1s ease;
 }
 .box-title p {
     padding: 20px 0 10px 0;
@@ -300,10 +369,20 @@ header {
 .catalogue-img {
     width: 100%;
     height: 180px;
-    background: url(../images/chair.jpg);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
+}
+.catalogue-img img {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+    filter: grayscale(80%);
+}
+.catalogue-img:hover img {
+    filter: grayscale(0) ;
 }
 .catalogue-title p{
     padding: 10px 0 0 0;
@@ -315,7 +394,7 @@ header {
 }
 .cost {
     padding: 0 0 10px 0;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 700;
 }
 .box-catalogue {
@@ -340,7 +419,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 6px 0 0 0;
 }
 .gallery-img {
     width: 255px;
@@ -350,6 +428,33 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    margin: 3px;
+    position: relative;
+}
+.gallery-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    transition: 0.7s;
+}
+.gallery-img:hover .gallery-hover {
+    opacity: 0.6 ;
+}
+.gallery-img:hover i {
+    opacity: 1;
+}
+.gallery-img i {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+    transition: 0.7s;
 }
 footer {
     background: #f9f6f7;
@@ -384,11 +489,16 @@ footer {
     margin: 0 50px 0 0;
 }
 .get p, .advice p {
-    margin: 0 0 10px 0;
+    font-size: 16px;
+    margin: 0 0 5px 0;
     font-weight: 700;
 }
 .get ul li, .advice ul li {
-    padding: 0 0 5px 0;
+    padding: 8px 0 7px 0;
+    border-bottom: 1px solid transparent;
+}
+.get ul li:hover, .advice ul li:hover {
+    border-bottom: 1px solid rgba(150, 150, 150, 0.5);
 }
 .info p:nth-child(1) {
     padding: 50px 0 40px 0;
@@ -411,7 +521,7 @@ footer {
 .subscribe {
     width: 100%;
     padding: 15px;
-    margin: 0 0 0 95px;
+    margin: 0 0 0 105px;
     background: #fff;
     box-shadow: 0 0 10px rgba(194, 194, 194, 0.3);
 }
