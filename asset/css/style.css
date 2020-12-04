@@ -566,3 +566,12 @@ button:hover {
     color: #fff;
     border: 1px solid transparent;
 }
+.payment {
+    position: absolute;
+    right: 5.3%;
+}
+.payment img {
+    height: 20px;
+    width: auto;
+    margin: 40px 10px;
+}
